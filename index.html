@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <section class="calculator">
+      <div class="heading">
+        <h1 class="heading__title">calc</h1>
+        <div class="heading__theme">
+          <p class="heading__theme-description">theme</p>
+          <div class="heading__theme-bar">
+            <ul class="heading__theme-options">
+              <li class="heading__theme-option">1</li>
+              <li class="heading__theme-option">2</li>
+              <li class="heading__theme-option">3</li>
+            </ul>
+            <div class="heading__theme-switch">
+              <div class="theme-switch__ball"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input class="display" type="text" disabled />
+      <div class="buttons">
+        <button class="btn" id="zero">0</button>
+        <button class="btn" id="one">1</button>
+        <button class="btn" id="two">2</button>
+        <button class="btn" id="three">3</button>
+        <button class="btn" id="four">4</button>
+        <button class="btn" id="five">5</button>
+        <button class="btn" id="six">6</button>
+        <button class="btn" id="seven">7</button>
+        <button class="btn" id="eight">8</button>
+        <button class="btn" id="nine">9</button>
+
+        <button class="btn" id="dot">.</button>
+        <button class="btn" id="add">+</button>
+        <button class="btn" id="subtract">-</button>
+        <button class="btn" id="multiply">x</button>
+        <button class="btn" id="divide">/</button>
+        <button class="btn btn-accent" id="equals">=</button>
+
+        <button class="btn btn-functional" id="del">DEL</button>
+        <button class="btn btn-functional" id="reset">RESET</button>
+      </div>
+    </section>
+    <script type="module" src="app/app.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,352 @@
+/* VARIABLES */
+
+:root {
+  --font-display: 48px;
+  --font-size-base: 32px;
+  --font-size-heading: 32px;
+  --font-size-functional-button: 24px;
+  --font-size-theme: 16px;
+  --font-family: "League Spartan", serif;
+  --font-weight: 700;
+
+  --transition-duration: 0.3s;
+  --transform-duration: 0.2s;
+
+  /* CONTAINERS SIZE */
+  --switch-width: 70px;
+  --switch-height: 26px;
+  --switch-ball-radius: 16px;
+  --display-height: 124px;
+  --calculator-width: 475px;
+
+  /* GRID */
+  --grid-gap: 24px;
+
+  /* RADIUS */
+  --xsmall-radius: 4px;
+  --small-radius: 8px;
+  --medium-radius: 16px;
+  --semi-medium-radius: 24px;
+  --large-radius: 32px;
+  --xlarge-radius: 48px;
+
+  /* SPACE */
+  --xsmall-space: 4px;
+  --small-space: 8px;
+  --medium-space: 16px;
+  --semi-medium-space: 24px;
+  --large-space: 32px;
+  --xlarge-space: 48px;
+}
+
+/* Theme 1 (Dark Theme) */
+.theme-dark {
+  --main-bg: hsl(222, 26%, 31%);
+  --toggle-keypad-bg: hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+  --key-bg: hsl(225, 21%, 49%);
+  --key-bg-hover: hsl(225, 30%, 70%);
+  --key-shadow: hsl(224, 28%, 35%);
+  --accent-key-bg: hsl(6, 63%, 50%);
+  --accent-key-bg-hover: hsl(6, 63%, 60%);
+  --accent-key-shadow: hsl(6, 70%, 34%);
+  --secondary-key-bg: hsl(30, 25%, 89%);
+  --secondary-key-bg-hover: hsl(30, 25%, 98%);
+  --secondary-key-shadow: hsl(28, 16%, 65%);
+  --text-primary: hsl(221, 14%, 31%);
+  --text-secondary: hsl(0, 0%, 100%);
+}
+
+/* Theme 2 (Light Theme) */
+.theme-light {
+  --main-bg: hsl(0, 0%, 90%);
+  --toggle-keypad-bg: hsl(0, 5%, 81%);
+  --screen-bg: hsl(0, 0%, 93%);
+  --key-bg: hsl(185, 42%, 37%);
+  --key-bg-hover: hsl(185, 42%, 55%);
+  --key-shadow: hsl(185, 58%, 25%);
+  --accent-key-bg: hsl(25, 98%, 40%);
+  --accent-key-bg-hover: hsl(25, 98%, 55%);
+  --accent-key-shadow: hsl(25, 99%, 27%);
+  --secondary-key-bg: hsl(45, 7%, 89%);
+  --secondary-key-bg-hover: hsl(45, 7%, 95%);
+  --secondary-key-shadow: hsl(35, 11%, 61%);
+  --text-primary: hsl(60, 10%, 19%);
+  --text-secondary: hsl(0, 0%, 100%);
+}
+
+/* Theme 3 (Neon Theme) */
+.theme-neon {
+  --main-bg: hsl(268, 75%, 9%);
+  --toggle-keypad-bg: hsl(268, 71%, 12%);
+  --screen-bg: hsl(268, 71%, 12%);
+  --key-bg: hsl(281, 89%, 26%);
+  --key-bg-hover: hsl(281, 89%, 40%);
+  --key-shadow: hsl(285, 91%, 52%);
+  --accent-key-bg: hsl(176, 100%, 44%);
+  --accent-key-bg-hover: hsl(176, 100%, 60%);
+  --accent-key-shadow: hsl(177, 92%, 70%);
+  --secondary-key-bg: hsl(268, 47%, 21%);
+  --secondary-key-bg-hover: hsl(268, 47%, 50%);
+  --secondary-key-shadow: hsl(290, 70%, 36%);
+  --text-primary: hsl(52, 100%, 62%);
+  --text-secondary: hsl(198, 20%, 13%);
+  --text-white: hsl(0, 0%, 100%);
+}
+
+/* ID'S */
+
+#zero {
+  grid-area: zero;
+}
+
+#one {
+  grid-area: one;
+}
+
+#two {
+  grid-area: two;
+}
+
+#three {
+  grid-area: three;
+}
+
+#four {
+  grid-area: four;
+}
+
+#five {
+  grid-area: five;
+}
+
+#six {
+  grid-area: six;
+}
+
+#seven {
+  grid-area: seven;
+}
+
+#eight {
+  grid-area: eight;
+}
+
+#nine {
+  grid-area: nine;
+}
+
+#dot {
+  grid-area: dot;
+}
+
+#add {
+  grid-area: add;
+}
+
+#subtract {
+  grid-area: subtract;
+}
+
+#multiply {
+  grid-area: multiply;
+}
+
+#divide {
+  grid-area: divide;
+}
+
+#equals {
+  grid-area: equals;
+}
+
+#del {
+  grid-area: del;
+}
+
+#reset {
+  grid-area: reset;
+}
+
+/* GLOBAL STYLES */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  background-color: var(--main-bg);
+}
+
+/* CALCULATOR COMPONENT */
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  width: var(--calculator-width);
+}
+
+.display {
+  height: var(--display-height);
+  border: 0;
+  text-align: right;
+  margin-bottom: var(--semi-medium-space);
+  padding: 0;
+  padding-right: var(--semi-medium-space);
+  border-radius: var(--small-radius);
+  background-color: var(--screen-bg);
+  color: var(--text-secondary);
+  font-size: var(--font-display);
+  
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+  "seven eight nine del"
+  "four five six add"
+  "one two three subtract"
+  "dot zero divide multiply"
+  "reset reset equals equals";
+  gap: var(--grid-gap);
+  padding: var(--semi-medium-space);
+  border-radius: var(--small-radius);
+  background-color: var(--toggle-keypad-bg);
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 0;
+  padding: var(--xsmall-space) var(--medium-space);
+  border-radius: var(--small-radius);
+  background-color: var(--secondary-key-bg);
+  color: var(--text-primary);
+  border-bottom: var(--xsmall-space) solid var(--secondary-key-shadow);
+  transition: background-color var(--transition-duration) ease, transform var(--transform-duration) ease;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: var(--secondary-key-bg-hover);
+}
+
+.btn-accent {
+  background-color: var(--accent-key-bg);
+  border-bottom: var(--xsmall-space) solid var(--accent-key-shadow);
+  color: var(--text-secondary);
+}
+
+.btn-accent:hover {
+  cursor: pointer;
+  background-color: var(--accent-key-bg-hover);
+}
+
+.btn-functional {
+  background-color: var(--key-bg);
+  border-bottom: var(--xsmall-space) solid var(--key-shadow);
+  color: var(--text-secondary);
+  font-size: var(--font-size-functional-button);
+}
+
+.btn-functional:hover {
+  cursor: pointer;
+  background-color: var(--key-bg-hover);
+}
+
+/* HEADING COMPONENT */
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: var(--semi-medium-space);
+  color: var(--text-secondary);
+}
+
+.heading__title {
+  font-size: var(--font-size-heading);
+}
+
+.heading__theme {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 30%;
+  font-size: var(--font-size-theme);
+  text-transform: uppercase;
+}
+
+.heading__theme-description {
+  padding-bottom: var(--xsmall-space);
+}
+
+.heading__theme-bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading__theme-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline-start: 0;
+  padding-left: var(--xsmall-space);
+  padding-right: var(--xsmall-space);
+  margin-bottom: var(--xsmall-space);
+}
+
+.heading__theme-option {
+  list-style: none;
+}
+
+.heading__theme-switch {
+  width: var(--switch-width);
+  height: var(--switch-height);
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: calc(0.5 * var(--switch-width));
+  background-color: var(--toggle-keypad-bg);
+  margin-bottom: var(--xsmall-space);
+}
+
+.theme-switch__ball {
+  position: absolute;
+  width: var(--switch-ball-radius);
+  height: var(--switch-ball-radius);
+  border-radius: 50%;
+  left: var(--xsmall-space);
+  transition: left var(--transition-duration) ease; 
+  background-color: var(--accent-key-bg);
+}
+
+.theme-switch__ball:hover {
+  cursor: pointer;
+  background-color: var(--accent-key-bg-hover);
+}
+
+@media (max-width: 375px) {
+  .calculator {
+    width: 375px;
+    padding: 20px;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+
+  .heading__theme {
+    width: 40%;
+  }
+}
